@@ -29,11 +29,10 @@ html{
   /* font-family: 'SF Pro Dispaly',sans-serif; */
 }
   .container{
-    padding-left:10px;
-    padding-right:10px;
+    padding-left:15px;
+    padding-right:15px;  
     margin-left: auto;
-    margin-right: auto;
-
+    margin-right:auto;
   }
   /* Small */
   @media (min-width: 768px) {
@@ -47,15 +46,17 @@ html{
       padding-left:25px;
       padding-right:25px;
       width: 970px;
+    
     }
   }
   /* Large */
   @media (min-width: 1200px) {
     .container {
       width: 1170px;
+
     }
   }
-  /*end gloable rulles
+  
 /*start with nav bar*/
 header{
   width: 100%;
@@ -183,37 +184,49 @@ header .container nav .nav-list-mobile{
   padding-top: var(--main-padding);
   padding-bottom: var(--main-padding);
 }
+.contact .container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
 @media (min-width:767px) {
   .contact .container{
     display: flex;
+    flex-direction:row;
     justify-content: space-between;
   }
 }
+
 .contact .container h1{
-  margin-bottom: 25px;
-    font-size: 3rem;
+   margin-bottom: 25px;
+    font-size: 4rem;
     font-weight: bold;
     color: #6E6E73;
     line-height: 1.1;
     min-width: 250px;
     max-width:700px;
-    text-align: center;
-    margin-right: 50px;
     margin-top: 0;
+}
+@media (min-width:767px) {
+  .contact .container h1{
+    text-align: left;
+  }
 }
 .contact .container h1 span{
     color: #000;
 }
 .contact .container .assistance{
    text-align: center;
-
+min-width: 15rem;
 }
+
 
 .contact .container .assistance .assistance-help .text{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .contact .container .assistance .assistance-help .text h4{
@@ -224,6 +237,11 @@ header .container nav .nav-list-mobile{
 .contact .container .assistance .assistance-help .text a{
   color: #0066CC;
   font-size: 1.35rem;
+  cursor: pointer;
+}
+.contact .container .assistance .assistance-help .text a span{
+  color: #0066CC;
+  font-size: 1rem;
 }
 .contact .container .assistance .assistance-help{
   display: flex;
@@ -236,9 +254,122 @@ header .container nav .nav-list-mobile{
 .contact .container .assistance .assistance-store img{
   width: 25px;
   border-radius: 50%;
-  object-fit:contain;
+  object-fit:cover;
   margin-right: 15px;
   position: relative;
   top: -2px;
 }
 /*end contact*/
+/*start products sec3*/
+.Carousel {
+  padding-top: var(--main-padding);
+  padding-bottom: var(--main-padding);
+  position: relative;
+  
+}
+.Carousel .arrow{
+  position: absolute;
+  z-index: 500;
+  top: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  aspect-ratio: 1/1;
+  border: none;
+  border-radius: 50%;
+  background-color:rgba(0 0 0 /.4);
+  color:#fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: scale var(--main-transition);
+}
+
+.Carousel .left{
+  left: 20px;
+  display: none;
+}
+
+.Carousel .right{
+  right: 20px;
+}
+
+
+
+
+.Carousel .product-container{
+  display: flex;
+  justify-content: space-between;
+  overflow-x: auto;
+  padding-left: 220px;
+  scroll-behavior: smooth;
+  transition: scroll var(--main-transition);
+}
+
+
+
+@media (max-width: 1300px) {
+  .Carousel .product-container{
+    padding-left: 57px;
+  }
+}
+@media (max-width: 992px) {
+  .Carousel .product-container{
+    padding-left: 80px;
+  }
+}
+@media (max-width: 767px) {
+  .Carousel .product-container{
+    padding-left: 5px;
+  }
+}
+.Carousel .product-container::-webkit-scrollbar{
+  display: none;
+}
+.Carousel .product-container .product{
+ min-width: 120px;
+ height: 150px;
+  aspect-ratio: 1/1;
+  margin: 0 15px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media (max-width: 767px) {
+  .Carousel .product-container .product{
+    min-width: 100px;
+    margin: 0 5px;
+  }
+}
+
+/* .Carousel .product-container .product:hover .Carousel .arrow{
+  display: flex;
+ } */
+
+.Carousel .product-container .product img{
+  width: 80%;
+  height: 70%;
+}
+
+
+.product-container .product a{
+ font-size: 1.2rem;
+ font-weight: bold;
+ color: rgba(0 0 0 /.9);
+ text-align: center;
+ margin-top: 20px;
+ 
+} 
+
+
+
+
+
+
+
+
+
+
+
+
