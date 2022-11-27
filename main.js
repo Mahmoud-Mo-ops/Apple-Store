@@ -10,9 +10,6 @@ selector('.mobile-menu').addEventListener('click',()=>{
         selector('.nav-list-larger').style.opacity='0';
     }
 })
-
-
-
 const rightArrow=selector('.right');
 const leftArrow=selector('.left');
 const productsContainer=selector('.product-container');
@@ -20,7 +17,6 @@ const products=selectorAll('.product');
 const productLength=products.length;
 const lastProduct=products[productLength-1];
 const firstItem=products[0]
-// console.log(rightArrow,leftArrow,productsContainer,products,firstProduct)
 
 rightArrow.addEventListener('click',()=>{
     products.forEach((product)=>{
@@ -38,11 +34,9 @@ leftArrow.addEventListener('click',()=>{
     products.forEach((product)=>{
         let productwidth=product.getBoundingClientRect().width;
         productsContainer.scrollLeft -=  productwidth ;
+        rightArrow.style.display="flex"
     })
-    rightArrow.style.display="flex"
-    
 })
-
 function isInViewport(el) {
     const rect = el.getBoundingClientRect();
     return (
@@ -53,4 +47,10 @@ function isInViewport(el) {
 
     );
 }
+
+
+
+
+
+
 
