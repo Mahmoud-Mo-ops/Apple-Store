@@ -49,8 +49,13 @@ function isInViewport(el) {
 }
 
 
+const clickBtns=[...document.querySelectorAll('.header')]
+const dropMenu=[...document.querySelectorAll('.dropdown-content')] 
 
-
-
-
+clickBtns.forEach((Btn,index)=>{
+Btn.addEventListener('click',function(){
+    console.log(this.nextElementSibling)
+      this.nextElementSibling.classList.toggle('open')
+})
+})
 
