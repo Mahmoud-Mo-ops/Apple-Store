@@ -63,7 +63,6 @@
   }
 html{
   overflow-x: hidden;
-  /* scroll-behavior: smooth; */
   font-size: .9rem;
 }
   .container{
@@ -121,6 +120,9 @@ html{
   .product-container::-webkit-scrollbar{
     display: none;
   }
+  .help .container::-webkit-scrollbar{
+    display: none;
+  }
 
   /*arrow*/
   section {
@@ -149,15 +151,16 @@ html{
   }
   section .left{
     left: 20px;
-    display: none;
   }
   section .right{
     right: 20px;
   }
-  section .product-container:hover .arrow{ 
-    scale: 1;
+@media (max-width:767px) {
+  .left,
+  .right{
+    display: none;
   }
-
+}
 /*start with nav bar*/
 header{
   width: 100%;
@@ -180,6 +183,7 @@ header .container nav .nav-list-mobile{
     justify-content: space-between;
     margin: 0 -1px;
   }
+ 
   .nav-list-larger{
     display: flex;
    }
@@ -213,6 +217,7 @@ header .container nav .nav-list-mobile{
     cursor: pointer;
     position: relative;
     z-index: 1500;
+    padding-left: 20px;
   }
   .mobile-menu span{
     display: block;
@@ -242,6 +247,11 @@ header .container nav .nav-list-mobile{
     background-color: #000;
     transition: height var(--main-transition);
   }
+  @media (min-width:767px) {
+    header.active{
+     height: 0px;
+    }
+  }
   .active .nav-link-bag{
     opacity: 0;
   }
@@ -269,7 +279,6 @@ header .container nav .nav-list-mobile{
     font-size: 1.4rem;
     font-weight: 540;
   }
- 
    .nav-list-larger .nav-item:not(:last-child) .nav-link::after{
     position: absolute;
     bottom: -10px;
@@ -285,7 +294,6 @@ header .container nav .nav-list-mobile{
   padding-top: var(--main-padding);
   padding-bottom: var(--main-padding);
 }
-
 .contact .container{
   display: flex;
   flex-direction: column;
@@ -297,10 +305,8 @@ header .container nav .nav-list-mobile{
     display: flex;
     flex-direction:row;
     justify-content: space-between;
-
   }
 }
-
 .contact .container h1{
    margin-bottom: 25px;
     font-size: 2rem;
@@ -334,15 +340,12 @@ header .container nav .nav-list-mobile{
    text-align: center;
 min-width: 15rem;
 }
-
-
 .contact .container .assistance .assistance-help .text{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
 }
-
 .contact .container .assistance .assistance-help .text h4{
  font-size: 1.2rem;
  font-weight: 550;
@@ -375,7 +378,6 @@ min-width: 15rem;
 }
 /*end contact*/
 /*start products sec3*/
-
 .Carousel .product-container .product{
  min-width: 120px;
  height: 150px;
@@ -486,6 +488,7 @@ min-width: 15rem;
   justify-content: flex-start;
   align-items: flex-start;
   height: 480px;
+  overflow-x: auto;
 }
 .help .container .help-Mann{
   background-color: #fff;
