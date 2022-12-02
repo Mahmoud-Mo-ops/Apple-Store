@@ -18,6 +18,8 @@
     text-decoration: none;
     list-style: none;
     outline: none;
+    font-family: poppins , sans-serif;
+    font-weight: 530;
   }
    .main-header{
     font-size: 2.5rem;
@@ -52,6 +54,7 @@
   }
    .main-header span{
      color: #000;
+     font-weight: 550;
   }
   a{
     display: block;
